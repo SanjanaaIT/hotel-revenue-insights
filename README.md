@@ -79,13 +79,3 @@ Note: The MVP uses simulated/sample data for demonstration purposes.
 - Advanced AI models for long-term forecasting
 - Personalized pricing strategies
 
----
-
-## Project Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/HotelRevAI.git
-
-# Navigate to project directory
-cd HotelRevAI
