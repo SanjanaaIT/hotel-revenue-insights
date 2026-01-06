@@ -6,7 +6,7 @@ import {
   DollarSign,
   Upload,
   LogOut,
-  Hotel,
+  Settings,
 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,7 @@ const navItems = [
   { path: "/analytics", label: "Revenue Analytics", icon: LineChart },
   { path: "/pricing", label: "Pricing Recommendations", icon: DollarSign },
   { path: "/upload", label: "Data Upload", icon: Upload },
+  { path: "/settings", label: "Settings", icon: Settings },
 ];
 
 export const Sidebar = () => {
@@ -27,8 +28,8 @@ export const Sidebar = () => {
       <div className="flex h-full flex-col">
         {/* Logo */}
         <div className="flex h-16 items-center gap-3 border-b border-border px-6">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-[hsl(200,95%,52%)]">
-            <Hotel className="h-5 w-5 text-primary-foreground" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-[hsl(200,95%,52%)] shadow-lg shadow-primary/30">
+            <span className="text-xl font-black text-primary-foreground tracking-tighter">H</span>
           </div>
           <div>
             <h1 className="text-lg font-bold text-foreground">HotelRevAI</h1>

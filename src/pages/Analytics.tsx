@@ -1,5 +1,6 @@
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useCurrency } from "@/contexts/CurrencyContext";
 import {
   dailyRevenueData,
   monthlyRevenueData,
@@ -20,6 +21,7 @@ import {
 } from "recharts";
 
 const Analytics = () => {
+  const { currency } = useCurrency();
   return (
     <MainLayout>
       <div className="space-y-8">
@@ -61,7 +63,7 @@ const Analytics = () => {
                       fontSize={11}
                       tickLine={false}
                       axisLine={false}
-                      tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
+                      tickFormatter={(value) => `${currency.symbol}${(value / 1000).toFixed(0)}k`}
                     />
                     <Tooltip
                       contentStyle={{
@@ -70,7 +72,7 @@ const Analytics = () => {
                         borderRadius: "0.75rem",
                       }}
                       formatter={(value: number) => [
-                        `$${value.toLocaleString()}`,
+                        `${currency.symbol}${value.toLocaleString()}`,
                         "Revenue",
                       ]}
                     />
@@ -113,7 +115,7 @@ const Analytics = () => {
                       fontSize={11}
                       tickLine={false}
                       axisLine={false}
-                      tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
+                      tickFormatter={(value) => `${currency.symbol}${(value / 1000).toFixed(0)}k`}
                     />
                     <Tooltip
                       contentStyle={{
@@ -122,7 +124,7 @@ const Analytics = () => {
                         borderRadius: "0.75rem",
                       }}
                       formatter={(value: number) => [
-                        `$${value.toLocaleString()}`,
+                        `${currency.symbol}${value.toLocaleString()}`,
                         "Revenue",
                       ]}
                     />
@@ -178,7 +180,7 @@ const Analytics = () => {
                       fontSize={12}
                       tickLine={false}
                       axisLine={false}
-                      tickFormatter={(value) => `$${value}`}
+                      tickFormatter={(value) => `${currency.symbol}${value}`}
                     />
                     <Tooltip
                       contentStyle={{
@@ -187,7 +189,7 @@ const Analytics = () => {
                         borderRadius: "0.75rem",
                       }}
                       formatter={(value: number, name: string) => [
-                        name === "occupancy" ? `${value}%` : `$${value}`,
+                        name === "occupancy" ? `${value}%` : `${currency.symbol}${value}`,
                         name === "occupancy" ? "Occupancy" : "Price",
                       ]}
                     />
