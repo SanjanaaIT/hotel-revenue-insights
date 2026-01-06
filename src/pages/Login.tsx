@@ -4,7 +4,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Hotel, Mail, Lock, ArrowRight } from "lucide-react";
+import { Mail, Lock, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
 const Login = () => {
@@ -58,7 +58,7 @@ const Login = () => {
           {/* Logo */}
           <div className="mb-8 text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-[hsl(200,95%,52%)] shadow-[0_0_40px_hsl(var(--primary)/0.4)]">
-              <Hotel className="h-8 w-8 text-primary-foreground" />
+              <span className="text-3xl font-black text-primary-foreground tracking-tighter">H</span>
             </div>
             <h1 className="text-3xl font-bold text-foreground">HotelRevAI</h1>
             <p className="mt-2 text-muted-foreground">

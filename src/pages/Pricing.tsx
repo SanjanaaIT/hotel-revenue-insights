@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { roomTypes } from "@/lib/mockData";
 import { cn } from "@/lib/utils";
+import { useCurrency } from "@/contexts/CurrencyContext";
 import {
   TrendingUp,
   TrendingDown,
@@ -29,9 +30,11 @@ const demandBadge = {
 };
 
 const Pricing = () => {
+  const { currency } = useCurrency();
+
   const handleApplyPrice = (roomName: string, newPrice: number) => {
     toast.success(`Price updated for ${roomName}`, {
-      description: `New price: $${newPrice} applied successfully`,
+      description: `New price: ${currency.symbol}${newPrice} applied successfully`,
     });
   };
 
@@ -91,14 +94,14 @@ const Pricing = () => {
                         Current Price
                       </p>
                       <p className="text-2xl font-bold text-foreground">
-                        ${room.currentPrice}
+                        {currency.symbol}{room.currentPrice}
                       </p>
                     </div>
                     <div className="rounded-lg bg-primary/10 p-4 ring-1 ring-primary/30">
                       <p className="text-sm text-primary">AI Recommended</p>
                       <div className="flex items-baseline gap-2">
                         <p className="text-2xl font-bold text-primary">
-                          ${room.recommendedPrice}
+                          {currency.symbol}{room.recommendedPrice}
                         </p>
                         <span
                           className={cn(
@@ -115,7 +118,7 @@ const Pricing = () => {
                           ) : (
                             <Minus className="h-3 w-3" />
                           )}
-                          {isIncrease && "+"}${Math.abs(priceDiff)}
+                          {isIncrease && "+"}{currency.symbol}{Math.abs(priceDiff)}
                         </span>
                       </div>
                     </div>

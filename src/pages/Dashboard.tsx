@@ -4,6 +4,7 @@ import { DemandForecastCard } from "@/components/dashboard/DemandForecastCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { dashboardStats, dailyRevenueData } from "@/lib/mockData";
 import { DollarSign, Percent, TrendingUp, Hotel } from "lucide-react";
+import { useCurrency } from "@/contexts/CurrencyContext";
 import {
   LineChart,
   Line,
@@ -15,6 +16,7 @@ import {
 } from "recharts";
 
 const Dashboard = () => {
+  const { currency } = useCurrency();
   return (
     <MainLayout>
       <div className="space-y-8">
@@ -34,7 +36,7 @@ const Dashboard = () => {
               value={dashboardStats.totalRevenue.toLocaleString()}
               change={dashboardStats.revenueChange}
               icon={DollarSign}
-              prefix="$"
+              prefix={currency.symbol}
             />
           </div>
           <div className="animate-slide-up" style={{ animationDelay: "200ms" }}>
@@ -52,7 +54,7 @@ const Dashboard = () => {
               value={dashboardStats.avgDailyRate.toString()}
               change={dashboardStats.rateChange}
               icon={Hotel}
-              prefix="$"
+              prefix={currency.symbol}
             />
           </div>
           <div className="animate-slide-up" style={{ animationDelay: "400ms" }}>
@@ -61,7 +63,7 @@ const Dashboard = () => {
               value={dashboardStats.revPAR.toFixed(2)}
               change={dashboardStats.revPARChange}
               icon={TrendingUp}
-              prefix="$"
+              prefix={currency.symbol}
             />
           </div>
         </div>
@@ -97,7 +99,7 @@ const Dashboard = () => {
                       fontSize={12}
                       tickLine={false}
                       axisLine={false}
-                      tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
+                      tickFormatter={(value) => `${currency.symbol}${(value / 1000).toFixed(0)}k`}
                     />
                     <Tooltip
                       contentStyle={{
@@ -108,7 +110,7 @@ const Dashboard = () => {
                       }}
                       labelStyle={{ color: "hsl(var(--foreground))" }}
                       formatter={(value: number) => [
-                        `$${value.toLocaleString()}`,
+                        `${currency.symbol}${value.toLocaleString()}`,
                         "Revenue",
                       ]}
                     />
