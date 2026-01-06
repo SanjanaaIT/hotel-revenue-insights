@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
+# HotelRevAI – AI Driven Revenue Analysis for Hotels
 
-## Project info
+HotelRevAI is an AI-powered revenue intelligence platform designed to help hotels optimize room pricing and maximize revenue through data-driven insights. The project uses Artificial Intelligence to analyze booking trends, forecast demand, and recommend optimal room prices.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This project is developed as part of the **GDG on Campus – TechSprint Hackathon** under the **Open Innovation** problem statement.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+##  Problem Statement
 
-**Use Lovable**
+Hotels often rely on manual analysis and static pricing strategies, which fail to adapt to changing demand, seasonality, and customer behavior. This results in revenue loss due to underpricing during high-demand periods and overpricing during low-demand periods.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+##  Solution Overview
 
-**Use your preferred IDE**
+HotelRevAI addresses this problem by:
+- Analyzing historical booking and occupancy data
+- Predicting future demand using AI models
+- Providing intelligent, dynamic pricing recommendations
+- Displaying insights through an easy-to-use dashboard for hotel managers
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+The solution helps hotels make smarter pricing decisions, improve occupancy rates, and maximize overall revenue.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+##  Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- AI-based demand forecasting  
+- Dynamic room pricing recommendations  
+- Revenue and occupancy analytics dashboard  
+- Seasonal trend analysis  
+- Historical booking data analysis  
+- Secure login for hotel managers  
+- Scalable cloud-based architecture  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+##  Technologies Used
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### AI & Development
+- **Lovable AI** – Rapid prototyping of UI and application logic
 
-**Edit a file directly in GitHub**
+### Google Technologies
+- **Google Cloud Platform (GCP)** – Cloud infrastructure and deployment  
+- **Firebase Authentication** – Secure user login  
+- **BigQuery** – Storage and analysis of booking data  
+- **Vertex AI** – Demand forecasting and ML model simulation  
+- **Looker Studio** – Revenue analytics and visualization  
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Architecture Overview
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+User → Web Dashboard → Backend Services → BigQuery  
+BigQuery → Vertex AI → Pricing Recommendation Engine  
+Pricing Insights → Dashboard (Visualization via Looker Studio)
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## MVP Description
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The Minimum Viable Product (MVP) includes:
+- Revenue analytics dashboard
+- Demand forecast visualization
+- AI-generated pricing recommendations
+- Login page
 
-## How can I deploy this project?
+Note: The MVP uses simulated/sample data for demonstration purposes.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+##  Future Enhancements
 
-Yes, you can!
+- Integration with real-time hotel booking platforms
+- Competitor price comparison
+- Event-based surge pricing
+- Mobile application for hotel owners
+- Advanced AI models for long-term forecasting
+- Personalized pricing strategies
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Project Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/HotelRevAI.git
+
+# Navigate to project directory
+cd HotelRevAI
